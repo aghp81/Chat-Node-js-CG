@@ -4,6 +4,9 @@ const socketIo = require('socket.io');
 const app = express();
 const server = http.createServer(app);
 const io = socketIo(server);
+const connectDB = require('./config/db');
+
+connectDB(); // connect to Mongo DB
 
 app.use(express.json());
 app.use(express.static('public'));
